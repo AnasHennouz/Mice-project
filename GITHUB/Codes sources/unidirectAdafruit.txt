@@ -1,0 +1,48 @@
+import board
+import digitalio
+import neopixel
+import time
+
+# Configuration des NeoPixels
+led_count = 3
+led_pin = board.NEOPIXEL
+led_brightness = 1
+pixels = neopixel.NeoPixel(led_pin, led_count, brightness=led_brightness)
+pixels.fill((0, 0, 0))  # Assurez-vous que les LEDs sont éteintes au début
+pixels.show()
+
+# Configuration du pin d'impulsion
+pulse_pin = digitalio.DigitalInOut(board.D4)
+pulse_pin.direction = digitalio.Direction.INPUT
+
+
+# Nombre d'échantillons à lire
+sample_count = 1000
+time.sleep(5)
+# Réduire la latence en effectuant des opérations préalables avant de commencer la boucle principale
+for i in range(sample_count):
+    # Allumer les LEDs pour indiquer le début de la mesure
+    pixels.fill((255, 0, 0))
+    pixels.show()
+
+    # Démarrer le chronomètre
+    start_time = time.monotonic_ns()
+
+    # Attendre l'impulsion
+    while not pulse_pin.value:
+        pass
+
+    # Calculer la latence en nanosecondes
+    latency_ns = time.monotonic_ns() - start_time
+
+    # Convertir la latence en millisecondes
+    latency_ms = latency_ns / 1000000
+    print(latency_ms)
+    # Éteindre les LEDs pour indiquer la fin de la mesure
+    
+    time.sleep(0.5)
+    pixels.fill((0, 0, 0))
+    pixels.show()
+
+    # Pause pour éviter les détections multiples rapides
+    time.sleep(1)
