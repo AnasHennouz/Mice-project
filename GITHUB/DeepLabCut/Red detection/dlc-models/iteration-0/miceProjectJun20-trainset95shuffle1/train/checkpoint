@@ -1,0 +1,6 @@
+model_checkpoint_path: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-10000"
+all_model_checkpoint_paths: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-6000"
+all_model_checkpoint_paths: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-7000"
+all_model_checkpoint_paths: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-8000"
+all_model_checkpoint_paths: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-9000"
+all_model_checkpoint_paths: "/content/drive/My Drive/miceProject-moad-2024-06-20/dlc-models/iteration-0/miceProjectJun20-trainset95shuffle1/train/snapshot-10000"
